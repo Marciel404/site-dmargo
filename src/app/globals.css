@@ -1,0 +1,17 @@
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100vh;
+}
+
+@media only screen and (max-width: 900px) {
+  .content-contato{
+    display: block;
+  }
+}
