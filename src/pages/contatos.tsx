@@ -9,7 +9,7 @@ function submit(e: any) {
 
 export default function () {
     return (
-        <main className="h-full w-screen bg-pink-200">
+        <main className="h-full w-screen">
 
             <HEADER></HEADER>
 
