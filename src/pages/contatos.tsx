@@ -2,14 +2,12 @@ import FOOTER from "@/components/footer"
 import HEADER from "@/components/header"
 
 function submit(e: any) {
-
     e.preventDefault()
-
 }
 
 export default function () {
     return (
-        <main className="h-full w-screen">
+        <main className="h-full w-screen bg-pink-200">
 
             <HEADER></HEADER>
 
