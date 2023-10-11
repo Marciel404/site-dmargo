@@ -8,11 +8,62 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      animation: {
+        fadeinright: 'faderight 1s',
+        fadeinleft: 'fadeleft 1s',
+        fadeinup: 'fadeup 2s',
+        fadeindown: 'fadedown 2s',
       },
+      keyframes: {
+        faderight: {
+          "0%": {
+            "opacity": "0",
+            "-webkit-transform": "translate3d(100%, 0, 0)",
+            "transform": "translate3d(100%, 0, 0)",
+          },
+          "100%": {
+            "opacity": "1",
+            "-webkit-transform": "translate3d(0, 0, 0)",
+            "transform": "translate3d(0, 0, 0)"
+          }
+        },
+        fadeleft: {
+          "0%": {
+            "opacity": "0",
+            "-webkit-transform": "translate3d(-100%, 0, 0)",
+            "transform": "translate3d(-100%, 0, 0)"
+          },
+          "100%": {
+            "opacity": "1",
+            "-webkit-transform": "translate3d(0, 0, 0)",
+            "transform": "translate3d(0, 0, 0)"
+          }
+        },
+        fadeup: {
+          "0%": {
+            "opacity": "0",
+            "-webkit-transform": "translate3d(0, 100%, 0)",
+            "transform": "translate3d(0, 100%, 0)"
+          },
+          "100%": {
+            "opacity": "1",
+            "-webkit-transform": "translate3d(0, 0, 0)",
+            "transform": "translate3d(0, 0, 0)"
+          }
+        },
+        fadedown: {
+          "0%": {
+            "opacity": "0",
+            "-webkit-transform": "translate3d(0, -100%, 0)",
+            "transform": "translate3d(0, -100%, 0)"
+          },
+          "100%": {
+            "opacity": "1",
+            "-webkit-transform": "translate3d(0, 0, 0)",
+            "transform": "translate3d(0, 0, 0)"
+          }
+        }
+      }
     },
   },
   plugins: [],

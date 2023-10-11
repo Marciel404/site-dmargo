@@ -1,5 +1,6 @@
 import FOOTER from "@/components/footer"
 import HEADER from "@/components/header"
+import SIDEBAR from "@/components/sidebar"
 
 function submit(e: any) {
     e.preventDefault()
@@ -11,6 +12,8 @@ export default function () {
 
             <HEADER></HEADER>
 
+            <SIDEBAR></SIDEBAR>
+            
             <div>
                 <div className="grid grid-cols-2 text-center text-lg items-center mr-28 hover:cursor-default">
                     <div>

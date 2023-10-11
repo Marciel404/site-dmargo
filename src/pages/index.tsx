@@ -1,11 +1,15 @@
 import Header from '@/components/header'
+import SIDEBAR from '@/components/sidebar'
 
 export default function () {
   return (
-    <main className="h-full w-screen">
-        <Header></Header>
-        <div className="content">
-        </div>
+    <main>
+      <Header></Header>
+      <SIDEBAR></SIDEBAR>
+      <div className="content">
+        fsdfsdff asdsd
+        asdasd
+      </div>
     </main>
   )
 }

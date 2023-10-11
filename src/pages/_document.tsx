@@ -9,7 +9,6 @@ export default function () {
         <link rel="icon" href="/RELChibi.png" type="image/x-icon"/>
       </Head>
       <body>
-        <Main />
         <NextScript />
       </body>
     </Html>
