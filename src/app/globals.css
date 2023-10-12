@@ -35,4 +35,7 @@ body {
   .headertell {
     display: block;
   }
+  .footerplus{
+    display: block;
+  }
 }

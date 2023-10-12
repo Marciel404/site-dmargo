@@ -13,7 +13,7 @@ export default function HEADER() {
                 <div className="flex text-center justify-end">
                     <div className="flex items-center">
                         <div>
-                            <img height="20px" src="/contato.svg" alt="Telefone" />
+                            <img height="20px" src="/svgs/contato.svg" alt="Telefone" />
                         </div>
                         <h2 className="text-lg hover:cursor-pointer  mr-10">
                             <Link href="/contatos" className="no-underline text-current">Contatos</Link>
@@ -21,7 +21,7 @@ export default function HEADER() {
                     </div>
                     <div className="flex items-center">
                         <div>
-                            <img height="20px" src="/bolsa.svg" alt="BolsaCompra" />
+                            <img height="20px" src="/svgs/bolsa.svg" alt="BolsaCompra" />
                         </div>
                         <h2 className="text-lg hover:cursor-pointer  mr-10">
                             <Link href="/loja" className="no-underline text-current">Produtos</Link>
@@ -30,7 +30,7 @@ export default function HEADER() {
 
                     <div className="flex items-center">
                         <div>
-                            <img height="20px" src="/information.svg" alt="I" />
+                            <img height="20px" src="/svgs/information.svg" alt="I" />
                         </div>
                         <h2 className="text-lg hover:cursor-pointer mr-10">
                             <Link href="/sobre" className="no-underline text-current">Sobre nós</Link>
