@@ -1,11 +1,11 @@
-import Header from '@/components/header'
+import HEADER from '@/components/header'
 import SIDEBAR from '@/components/sidebar'
 
 export default function () {
   return (
     <main>
-      <Header></Header>
-      <SIDEBAR></SIDEBAR>
+      <HEADER />
+      <SIDEBAR />
       <div className="content">
         fsdfsdff asdsd
         asdasd

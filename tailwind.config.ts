@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       animation: {
         fadeinright: 'faderight 1s',
-        fadeinleft: 'fadeleft 1s',
+        fadeinleft: 'fadeleft .5s',
         fadeinup: 'fadeup 2s',
         fadeindown: 'fadedown 2s',
       },
@@ -28,15 +28,13 @@ const config: Config = {
           }
         },
         fadeleft: {
-          "0%": {
-            "opacity": "0",
-            "-webkit-transform": "translate3d(-100%, 0, 0)",
-            "transform": "translate3d(-100%, 0, 0)"
+          "from": {
+            "left": "-300px",
+            "opacity": "0"
           },
-          "100%": {
-            "opacity": "1",
-            "-webkit-transform": "translate3d(0, 0, 0)",
-            "transform": "translate3d(0, 0, 0)"
+          "to": {
+            "left": "0",
+            "opacity": "1"
           }
         },
         fadeup: {
@@ -62,7 +60,7 @@ const config: Config = {
             "-webkit-transform": "translate3d(0, 0, 0)",
             "transform": "translate3d(0, 0, 0)"
           }
-        }
+        },
       }
     },
   },

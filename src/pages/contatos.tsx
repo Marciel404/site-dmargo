@@ -8,12 +8,9 @@ function submit(e: any) {
 
 export default function () {
     return (
-        <main className="h-full w-screen bg-pink-200">
-
-            <HEADER></HEADER>
-
-            <SIDEBAR></SIDEBAR>
-            
+        <main className="w-screen bg-pink-200">
+            <HEADER/>
+            <SIDEBAR/>
             <div>
                 <div className="grid grid-cols-2 text-center text-lg items-center mr-28 hover:cursor-default">
                     <div>
@@ -82,7 +79,9 @@ export default function () {
                         </div>
                         <div className="flex">
                             <img src="/mail.svg" alt="email_icon" />
-                            <h4>contatoexempleemail@exemple.com</h4>
+                            <h4 className="emailContato">
+                                contatoexempleemail@exemple.com
+                                </h4>
                         </div>
                         <div className="mt-5">
                             <h2>

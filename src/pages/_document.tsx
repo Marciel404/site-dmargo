@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
+
 export default function () {
   return (
     <Html>
@@ -9,6 +10,7 @@ export default function () {
         <link rel="icon" href="/RELChibi.png" type="image/x-icon"/>
       </Head>
       <body>
+        <Main/>
         <NextScript />
       </body>
     </Html>
