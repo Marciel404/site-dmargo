@@ -7,7 +7,7 @@ export default function SIDEBAR() {
 
             <div className="flex">
 
-                <div className="border-solid overflow-y-auto top-0 left-0 fixed h-screen bg-pink-400 w-1/2 z-10">
+                <div className="border-solid overflow-y-auto top-0 left-0 fixed h-screen bg-pink-400 w-3/4 z-10">
 
                     <div>
 
