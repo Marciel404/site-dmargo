@@ -1,4 +1,4 @@
-export default function clickMenu(){
+export default function (){
     const sidebar = document.getElementsByClassName("sidebarmobile") as any
 
     if (sidebar[0].style.display == ""){

@@ -1,5 +1,6 @@
-import Header from "@/components/header"
-import React from "react"
+import findCookie from "@/scripts/findCookies";
+import moment from "moment-timezone";
+import React from "react";
 
 function valLogin(e: any) {
     e.preventDefault()
@@ -11,15 +12,18 @@ function valLogin(e: any) {
     })
         .then(request => request.json())
         .then(response => {
-            if(response.status === 400){
+            console.log(findCookie("123"))
+            if (response.status === 400) {
                 alert(response.error)
+            } else {
+                localStorage.setItem("valAdminPortal", JSON.stringify({val: true, expire: moment(moment(new Date()).tz("America/Sao_Paulo")).add(1,"days").tz("America/Sao_Paulo").unix()}))
+                location.href = "/admin/portal"
             }
         })
-        .catch(x=>{console.log(x)})
+        .catch(x => { console.log(x) })
 }
 
 export default function () {
-
     return (
         <main className="bg-pink-200 h-screen w-screen">
             <div>

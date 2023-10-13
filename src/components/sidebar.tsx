@@ -79,7 +79,7 @@ export default function SIDEBAR() {
                             </div>
 
                             <div>
-                                <Link className="list-none text-black text-lg no-underline" href="">Instagram</Link>
+                                <Link className="list-none text-black text-lg no-underline" href="https://www.instagram.com/margostore_oficial/">Instagram</Link>
                             </div>
 
                         </div>
@@ -97,7 +97,7 @@ export default function SIDEBAR() {
                         </div>
 
                     </div>
-                    
+
                 </div>
 
                 <div className="sidebarmobile top-0 h-screen fixed w-full" onClick={clickMenu}></div>
