@@ -15,13 +15,16 @@ export default function () {
                     const som2 = m1.date() - m2.date()
                     if (m1 < m2 || som2 > 1) {
                         location.href = "/"
-                        JSON.stringify({ val: false, expire: null })
+                        localStorage.setItem("valAdminPortal", JSON.stringify({ val: false, expire: null }))
                         alert("Tempo de Login inspirado")
                     }
                 }
             } else {
-                location.href = "/"
-                alert("Sem acesso")
+                if (location.href.split("/")[location.href.split("/").length - 1] != "admin") {
+                    location.href = "/"
+                    alert("Sem acesso")
+                }
+                
             }
         } catch {
             location.href = "/"

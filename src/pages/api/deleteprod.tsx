@@ -1,4 +1,4 @@
-import { addProduto } from "@/scripts/db/dbconections";
+import { deleteProduto } from "@/scripts/db/dbconections";
 import { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
@@ -12,14 +12,11 @@ type ResponseError = {
 }
 
 export default async function handler(req:NextApiRequest, res: NextApiResponse<ResponseData|ResponseError>) {
-    if( req.method === "PUT" ){
+    if( req.method === "DELETE" ){
         try {
-            const nome = req.headers.nome
-            const description = req.headers.description
-            const valor = req.headers.valor
-            const urlIMAGE = req.headers.urlimage
-            await addProduto(nome,description,valor,urlIMAGE)
-            res.status(200).send({content: "Produto Adicionado", status: 200})
+            const id = req.headers.id
+            await deleteProduto(id)
+            res.status(200).send({content: "Produto Deletado", status: 200})
         } catch (e){
             res.status(400).send({error: `${e}`, status: 400})
         }

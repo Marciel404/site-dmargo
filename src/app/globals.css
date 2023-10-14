@@ -16,8 +16,10 @@
   ;
 }
 
-#adcI {
+#adcI, #adcIS, #adcII, #adcIN, #adcID, #adcIV, #adcIIMG {
   width: 100%;
+  border-color: black;
+  border-width: 3px
 }
 
 body {
