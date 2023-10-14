@@ -17,7 +17,7 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse<R
             const nome = req.headers.nome
             const description = req.headers.description
             const valor = req.headers.valor
-            const urlIMAGE = req.headers.urlimage
+            const urlIMAGE = JSON.parse(req.body).urlimage
             await addProduto(nome,description,valor,urlIMAGE)
             res.status(200).send({content: "Produto Adicionado", status: 200})
         } catch (e){

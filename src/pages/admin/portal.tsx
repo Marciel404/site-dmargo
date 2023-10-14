@@ -9,9 +9,6 @@ export default function () {
                         <button className="p-3 text-lg rounded-lg hover:cursor-pointer" onClick={() => location.href = "/admin/adp"}>Adicionar Produtos</button>
                     </div>
                     <div className="p-3">
-                        <button className="p-3 text-lg rounded-lg hover:cursor-pointer " onClick={() => location.href = "/admin/rmp"}>Remover Produtos</button>
-                    </div>
-                    <div className="p-3">
                         <button className="p-3 text-lg rounded-lg hover:cursor-pointer" onClick={() => location.href = "/admin/edp"}>Editar Produto</button>
                     </div>
                 </div>

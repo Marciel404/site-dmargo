@@ -1,20 +1,21 @@
 import valLogin from "@/scripts/valLogin"
 
 async function saveProduto(e: any) {
+    e.preventDefault()
     try {
         const nome = e.target[0].value
         const description = e.target[1].value
         const valor = e.target[2].value
-        const urlIMAGE = e.target[3].value
+        const urlIMAGE: any = document.getElementById("photoProduto")
 
         fetch("/api/saveprod", {
             method: "PUT",
             headers: {
                 nome: nome,
                 description: description,
-                valor: valor,
-                urlIMAGE: urlIMAGE
-            }
+                valor: valor
+            },
+            body: JSON.stringify({urlimage: urlIMAGE.src})
         })
             .then(request => request.json())
             .then(response => {
@@ -37,9 +38,22 @@ function cancel() {
 
 
 function photoProduto(e: any) {
-    const p = document.getElementById("photoProduto")! as any
 
-    p.src = e.target.value
+    const img = document.getElementById("adcIIMG")! as any;
+
+    if (img.files.length > 0){
+
+        const carregando = img.files[0];
+        const lerarquivo = new FileReader()
+        
+        lerarquivo.onload = function(arquivoCarregando){
+           const img64 = arquivoCarregando.target?.result
+           const i =document.getElementById("photoProduto")! as any
+           i.src = `${img64}`
+        }
+
+        lerarquivo.readAsDataURL(carregando)
+    };
 
 }
 
@@ -61,7 +75,7 @@ export default function () {
                         <h2>Valor do produto:</h2>
                         <input required type="number" className="h-5 rounded-lg" id="adcI" />
                         <h2>Imagem do Peroduto:</h2>
-                        <input required type="url" onChange={(e) => { photoProduto(e) }} className="h-5 rounded-lg" id="adcI" />
+                        <input required type="file" onChange={(e) => { photoProduto(e) }} className="h-5 rounded-lg" id="adcIIMG" />
                         <div className="flex justify-end">
                             <input type="submit" value="Salvar" className="broder-solid rounded-lg p-3" />
                             <input type="button" value="Cancelar" className="broder-solid rounded-lg p-3" onClick={cancel} />

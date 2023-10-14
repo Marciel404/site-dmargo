@@ -8,14 +8,12 @@ async function editProduto() {
     const nome = e[2].value
     const description = e[3].value
     const valor = e[4].value
-    const urlIMAGE = e[5].value
+    const urlIMAGE: any = document.getElementById("photoProduto")
 
-    if (id == ""){
+    if (id == "") {
       alert("Selecione um produto")
       return
     }
-    console.log(id, nome, description, valor, urlIMAGE)
-
 
     fetch("/api/editProd", {
       method: "PATCH",
@@ -24,8 +22,8 @@ async function editProduto() {
         nome: nome,
         description: description,
         valor: valor,
-        urlIMAGE: urlIMAGE
-      }
+      },
+      body: JSON.stringify({urlimage: urlIMAGE.src})
     })
       .then(request => request.json())
       .then(response => {
@@ -48,7 +46,7 @@ async function deleteProduto() {
   const e = document.getElementById("FormEDIT")! as any
   const id = e[1].value
 
-  if (id == ""){
+  if (id == "") {
     alert("Selecione um produto")
     return
   }
@@ -102,7 +100,7 @@ function findItem() {
               s2.value = `${p.nome}`; s2.disabled = false
               s3.value = `${p.description}`; s3.disabled = false
               s4.value = `${p.valor}`; s4.disabled = false
-              s5.value = `${p.urlIMAGE}`; s5.disabled = false
+              s5.disabled = false
             }
           }
         }
@@ -111,8 +109,23 @@ function findItem() {
 }
 
 function photoProduto(e: any) {
-  const p = document.getElementById("photoProduto")! as any
-  p.src = e.target.value
+
+  const img = document.getElementById("adcIIMG")! as any;
+
+  if (img.files.length > 0) {
+
+    const carregando = img.files[0];
+    const lerarquivo = new FileReader()
+
+    lerarquivo.onload = function (arquivoCarregando) {
+      const img64 = arquivoCarregando.target?.result
+      const i = document.getElementById("photoProduto")! as any
+      i.src = `${img64}`
+    }
+
+    lerarquivo.readAsDataURL(carregando)
+  };
+
 }
 
 function addProdutoSelection() {
@@ -168,7 +181,7 @@ export default function () {
             <h2>Valor do produto:</h2>
             <input required disabled type="number" className="h-5 rounded-lg" id="adcIV" />
             <h2>Imagem do Peroduto:</h2>
-            <input required disabled type="url" className="h-5 rounded-lg" id="adcIIMG" onChange={photoProduto} />
+            <input required disabled type="file" className="h-5 rounded-lg" id="adcIIMG" onChange={photoProduto} />
             <div className="flex justify-end">
               <input type="button" value="Salvar" className="broder-solid rounded-lg p-3" onClick={editProduto} />
               <input type="button" value="Deletar" className="broder-solid rounded-lg p-3" onClick={deleteProduto} />
