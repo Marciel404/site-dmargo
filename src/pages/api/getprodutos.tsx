@@ -1,4 +1,4 @@
-import { getPordutosLoja } from "@/scripts/db/dbconections";
+import clientPromise from "@/scripts/db/mongoClient";
 import { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
@@ -11,16 +11,18 @@ type ResponseError = {
     error: string
 }
 
-export default async function handler(req:NextApiRequest, res: NextApiResponse<ResponseData|ResponseError>) {
-    if( req.method === "GET" ){
+export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData | ResponseError>) {
+    if (req.method === "GET") {
         try {
-            const prods = await getPordutosLoja()
-            res.json({content: `${JSON.stringify(prods)}`, status: 200})
-        } catch (e){
-            res.json({error: `${e}`, status: 400})
+            const db = (await clientPromise).db("MargoStore")
+            const cluster = db.collection("produtos")
+            const prods = await cluster.find({}).toArray()
+            res.json({ content: `${JSON.stringify(prods)}`, status: 200 })
+        } catch (e) {
+            res.json({ error: `${e}`, status: 400 })
         }
 
     } else {
-        res.json({error: "Method Errado", status: 405})
+        res.json({ error: "Method Errado", status: 405 })
     }
 }

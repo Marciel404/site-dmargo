@@ -22,9 +22,3 @@ export async function addProduto(nome, description, valor, urlIMAGE) {
         { upsert: true }
     )
 }
-
-export async function getPordutosLoja(){
-    const db = (await clientPromise).db("MargoStore")
-    const cluster = db.collection("produtos")
-    return await cluster.find({}).toArray()
-}
