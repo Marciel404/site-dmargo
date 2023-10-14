@@ -1,8 +1,8 @@
-import findCookie from "@/scripts/findCookies";
+import valLogin from "@/scripts/valLogin";
 import moment from "moment-timezone";
 import React from "react";
 
-function valLogin(e: any) {
+function valPassUser(e: any) {
     e.preventDefault()
     const user = e.target[0]
     const password = e.target[1]
@@ -12,7 +12,6 @@ function valLogin(e: any) {
     })
         .then(request => request.json())
         .then(response => {
-            console.log(findCookie("123"))
             if (response.status === 400) {
                 alert(response.error)
             } else {
@@ -25,7 +24,7 @@ function valLogin(e: any) {
 
 export default function () {
     return (
-        <main className="bg-pink-200 h-screen w-screen">
+        <main className="bg-pink-200 h-screen w-screen" onLoad={valLogin()!}>
             <div>
                 <div className="adminlogin grid place-content-center h-screen">
                     <div className="p-3 border-collapse border-double rounded-lg mr-3 w-96">
@@ -36,7 +35,7 @@ export default function () {
                             °°°°°
                         </div>
                         <div>
-                            <form onSubmit={(e) => { valLogin(e) }}>
+                            <form onSubmit={(e) => { valPassUser(e) }}>
                                 <div>
                                     <h4 className="flex">
                                         Usuario

@@ -16,11 +16,53 @@
   ;
 }
 
+#adcI {
+  width: 100%;
+}
+
 body {
   min-height: 100vh;
-  background-color: papayawhip;
   margin: 0 auto;
   border: solid red;
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
+}
+
+
+.divProdutoText {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#buttonBuy {
+  border-style: solid;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: medium;
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
+}
+
+.divProduto {
+  border: solid;
+  height: 300px;
+  width: 200px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  margin: 12px;
+}
+
+#imageProd {
+  width: 100%;
+  border-radius: 25px;
+}
+
+#buttonBuy:hover {
+  cursor: pointer
 }
 
 @media only screen and (max-width: 900px) {

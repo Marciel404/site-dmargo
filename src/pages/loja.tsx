@@ -8,7 +8,15 @@ export default function () {
         <main onLoad={produtosLoad()!}>
             <HEADER />
             <SIDEBAR />
-            <div className="produtosbar h-screen">
+            <div >
+                <img src="" alt="" />
+            </div>
+            <div className="">
+                
+            </div>
+            <div className="grid">
+                <div className="flex h-screen" id="produtosbar">
+                </div>
             </div>
             <FOOTER></FOOTER>
         </main>

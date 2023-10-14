@@ -8,7 +8,7 @@ function submit(e: any) {
 
 export default function () {
     return (
-        <main className="w-full bg-pink-200">
+        <main className="w-full">
             <HEADER />
             <SIDEBAR />
             <div>
