@@ -12,11 +12,8 @@ export default function () {
                 <img src="" alt="" />
             </div>
             <div className="">
-                
             </div>
-            <div className="grid">
-                <div className="flex h-screen" id="produtosbar">
-                </div>
+            <div className="flex flex-wrap justify-center" id="produtosbar">
             </div>
             <FOOTER></FOOTER>
         </main>

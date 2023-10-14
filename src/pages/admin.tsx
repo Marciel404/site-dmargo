@@ -12,7 +12,7 @@ function valPassUser(e: any) {
     })
         .then(request => request.json())
         .then(response => {
-            if (response.status === 400) {
+            if (response.status === 400 || response.status === 405) {
                 alert(response.error)
             } else {
                 localStorage.setItem("valAdminPortal", JSON.stringify({val: true, expire: moment(moment(new Date()).tz("America/Sao_Paulo")).add(1,"days").tz("America/Sao_Paulo").unix()}))

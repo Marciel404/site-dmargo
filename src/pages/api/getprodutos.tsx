@@ -15,12 +15,12 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse<R
     if( req.method === "GET" ){
         try {
             const prods = await getPordutosLoja()
-            res.status(200).send({content: `${JSON.stringify(prods)}`, status: 200})
+            res.json({content: `${JSON.stringify(prods)}`, status: 200})
         } catch (e){
-            res.status(400).send({error: `${e}`, status: 400})
+            res.json({error: `${e}`, status: 400})
         }
 
     } else {
-        res.status(405).send({error: "Method Errado", status: 405})
+        res.json({error: "Method Errado", status: 405})
     }
 }

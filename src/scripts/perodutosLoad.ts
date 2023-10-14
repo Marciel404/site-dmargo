@@ -6,7 +6,7 @@ export default function () {
         fetch("/api/getprodutos", { method: "GET" })
             .then(r => r.json())
             .then((r: any) => {
-                if (r.status === 400 || r.status === 405) {
+                if (r.error) {
                     alert(r.error)
                 } else {
                     for (const i of JSON.parse(r.content)) {

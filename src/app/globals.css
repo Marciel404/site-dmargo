@@ -28,13 +28,13 @@ body {
   background-color: rgb(251 207 232 / var(--tw-bg-opacity));
 }
 
-
 .divProdutoText {
   text-align: center;
   font-size: 1.125rem;
   line-height: 1.75rem;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #buttonBuy {
@@ -49,8 +49,8 @@ body {
 
 .divProduto {
   border: solid;
-  height: 300px;
-  width: 200px;
+  height: 60%;
+  width: 260px;
   border-radius: 8px;
   background-color: aliceblue;
   margin: 12px;
@@ -59,6 +59,7 @@ body {
 #imageProd {
   width: 100%;
   border-radius: 25px;
+  height: 290px;
 }
 
 #buttonBuy:hover {
@@ -69,9 +70,10 @@ body {
   .content-contato {
     display: block;
   }
+
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 580px) {
   .headerpc {
     display: none;
   }
@@ -83,4 +85,5 @@ body {
   .footerplus {
     display: block;
   }
+
 }
