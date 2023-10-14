@@ -14,7 +14,8 @@ type ResponseError = {
 export default async function handler(req:NextApiRequest, res: NextApiResponse<ResponseData|ResponseError>) {
     if( req.method === "GET" ){
         try {
-            res.status(200).send({content: `${JSON.stringify(await getPordutosLoja())}`, status: 200})
+            const prods = await getPordutosLoja()
+            res.status(200).send({content: `${JSON.stringify(prods)}`, status: 200})
         } catch (e){
             res.status(400).send({error: `${e}`, status: 400})
         }
