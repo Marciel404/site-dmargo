@@ -91,7 +91,7 @@ export default function () {
 
                         <div className="flex">
                             <img width="30px" height="30px" src="/svgs/instagram.svg" alt="instagram_icon" />
-                            <h4>@MargoStore</h4>
+                            <h4>@DMargo</h4>
                         </div>
 
                         <div className="flex">
@@ -156,7 +156,7 @@ export default function () {
 
             </div>
 
-            <FOOTER></FOOTER>
+            <FOOTER/>
 
         </main>
     )

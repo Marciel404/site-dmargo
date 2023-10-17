@@ -15,7 +15,7 @@ export default function () {
             </div>
             <div className="flex flex-wrap justify-center" id="produtosbar">
             </div>
-            <FOOTER></FOOTER>
+            <FOOTER/>
         </main>
     )
 }

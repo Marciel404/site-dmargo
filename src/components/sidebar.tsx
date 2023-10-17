@@ -14,7 +14,7 @@ export default function SIDEBAR() {
                         <div className="overflow-yuto grid grid-cols-2 items-center">
 
                             <h1>
-                                MargoStore
+                                DMargo
                             </h1>
                             <div className="flex justify-end">
                                 <i className="material-symbols-outlined text-5xl h-auto hover:cursor-pointer" onClick={clickMenu}>
@@ -79,7 +79,7 @@ export default function SIDEBAR() {
                             </div>
 
                             <div>
-                                <Link className="list-none text-black text-lg no-underline" href="https://www.instagram.com/margostore_oficial/">Instagram</Link>
+                                <Link className="list-none text-black text-lg no-underline" href="https://www.instagram.com/d_dmargo/">Instagram</Link>
                             </div>
 
                         </div>
@@ -91,7 +91,7 @@ export default function SIDEBAR() {
                             </div>
 
                             <div>
-                                <Link className="list-none text-black text-lg no-underline" href="https://bit.ly/wppDMargo">Whatsapp</Link>
+                                <Link className="list-none text-black text-lg no-underline" href="https://api.whatsapp.com/send?phone=5521986559058">Whatsapp</Link>
                             </div>
 
                         </div>
