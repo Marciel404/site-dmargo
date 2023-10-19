@@ -1,6 +1,5 @@
 import clickMenu from "@/scripts/clickMenu";
 import Link from "next/link";
-import React from "react";
 
 export default function HEADER() {
 
@@ -10,8 +9,8 @@ export default function HEADER() {
 
             <header className="headerpc grid grid-cols-2 bg-pink-400 items-center">
 
-                <div className="flex">
-                    <Link href="/"><img height="30px" src="/svgs/DMARGO.svg" alt="DMARGOSVG" className="text-lg hover:cursor-pointer m-3" /></Link>
+                <div>
+                    <Link href="/"><img height="30px" src="/images/DMargoLogo.png" alt="DMARGOLOGO" className="hover:cursor-pointer m-3" /></Link>
                 </div>
 
                 <div className="flex text-center justify-end">
@@ -80,7 +79,7 @@ export default function HEADER() {
                         <i className="material-symbols-outlined hover:cursor-pointer p-3 text-4xl" onClick={clickMenu} >menu</i>
                     </div>
 
-                    <img height="30px" src="/svgs/DMARGO.svg" alt="DMARGOSVG" className="flex text-lg hover:cursor-pointer m-3 justify-end" onClick={(e) => location.href = "/"} />
+                    <img height="30px" src="/images/DMargoLogo.png" alt="DMARGOLOGO" className="flex text-lg hover:cursor-pointer m-3 justify-end" onClick={(e) => location.href = "/"} />
 
                 </div>
 

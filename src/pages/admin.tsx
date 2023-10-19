@@ -22,7 +22,7 @@ function valPassUser(e: any) {
         .catch(x => { console.log(x) })
 }
 
-export default function () {
+export default function admin() {
     return (
         <main className="bg-pink-200 h-screen w-screen" onLoad={valLogin()!}>
             <div>

@@ -5,7 +5,7 @@ export default function FOOTER() {
         <footer className="bg-pink-400">
             <div>
                 <div className="text-center p-5">
-                    <img height="50px" src="/svgs/DMARGO.svg" alt="DMARGOSVG" />
+                    <img className="logomargo" src="/images/DMargoLogo.png" alt="DMARGOSVG" />
                 </div>
                 <div className="flex justify-center">
                     <div className="m-3">
@@ -22,7 +22,7 @@ export default function FOOTER() {
                 </div>
                 <div className="text-center">
                     <h4>www.margo.com</h4>
-                    <h4>D'Margo - CNPJ: 29.933.368/0001-94</h4>
+                    <h4>D"Margo - CNPJ: 29.933.368/0001-94</h4>
                     <h4>29.933.368/0001-94 © Copyright 2023 - presente</h4>
                     <h4>Todos os direitos reservados</h4>
                 </div>

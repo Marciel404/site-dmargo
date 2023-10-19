@@ -14,7 +14,7 @@ export default function () {
                     const m2 = moment(new Date()).tz("America/Sao_Paulo")
                     const som2 = m1.date() - m2.date()
                     if (m1 < m2 || som2 > 1) {
-                        location.href = "/"
+                        location.href = "/admin"
                         localStorage.setItem("valAdminPortal", JSON.stringify({ val: false, expire: null }))
                         alert("Tempo de Login inspirado")
                     }

@@ -1,5 +1,5 @@
-import Header from '@/components/header'
-import valLogin from '@/scripts/valLogin'
+import Header from "@/components/header"
+import valLogin from "@/scripts/valLogin"
 
 export default function () {
   return (

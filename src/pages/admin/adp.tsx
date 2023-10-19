@@ -22,6 +22,7 @@ async function saveProduto(e: any) {
                 if (response.status === 400 || response.status === 405) {
                     alert(response.error)
                 } else {
+                    location.reload()
                     alert("Item adicionado com sucesso")
                 }
             })
@@ -75,7 +76,7 @@ export default function () {
                         <h2>Valor do produto:</h2>
                         <input required type="number" className="h-5 rounded-lg" id="adcI" />
                         <h2>Imagem do Peroduto:</h2>
-                        <input required type="file" onChange={(e) => { photoProduto(e) }} className="h-5 rounded-lg" id="adcIIMG" />
+                        <input required type="file" onChange={(e) => { photoProduto(e) }} id="adcIIMG" />
                         <div className="flex justify-end">
                             <input type="submit" value="Salvar" className="broder-solid rounded-lg p-3" />
                             <input type="button" value="Cancelar" className="broder-solid rounded-lg p-3" onClick={cancel} />

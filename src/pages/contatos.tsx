@@ -6,7 +6,7 @@ function submit(e: any) {
     e.preventDefault()
 }
 
-export default function () {
+export default function contatos() {
     return (
         <main className="w-full">
             <HEADER />
