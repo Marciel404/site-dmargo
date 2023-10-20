@@ -1,18 +1,18 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       animation: {
-        fadeinright: 'faderight 1s',
-        fadeinleft: 'fadeleft .5s',
-        fadeinup: 'fadeup 2s',
-        fadeindown: 'fadedown 2s',
+        fadeinright: "faderight 1s",
+        fadeinleft: "fadeleft 1s",
+        fadeinup: "fadeup 2s",
+        fadeindown: "fadedown 2s",
       },
       keyframes: {
         faderight: {

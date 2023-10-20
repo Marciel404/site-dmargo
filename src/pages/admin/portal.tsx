@@ -2,7 +2,7 @@ import valLogin from "@/scripts/valLogin"
 
 export default function () {
     return (
-        <main onLoad={valLogin()!}>
+        <main className="bg-pink-200" onLoad={valLogin()!}>
             <div className="grid h-screen content-center">
                 <div className="flex justify-center items-center">
                     <div className="p-3">

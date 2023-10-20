@@ -1,6 +1,6 @@
 import clientPromise from "./mongoClient";
 
-export async function addProduto(nome, description, valor, urlIMAGE) {
+export async function addProduto(nome, description, valor, urlIMAGE, categoria) {
     const db = (await clientPromise).db("DMargo")
     const cluster = db.collection("produtos")
     await cluster.updateOne(
@@ -8,15 +8,18 @@ export async function addProduto(nome, description, valor, urlIMAGE) {
         { $inc: { qnt: 1 } },
         { upsert: true }
     )
-    const qnt = await cluster.findOne({ _id: "quantidadeProdutos" })
+    const id = await cluster.findOne({ _id: "quantidadeProdutos" })
     await cluster.updateOne(
-        { _id: `${qnt["qnt"]}` },
+        { _id: `${categoria}` },
         {
-            $set: {
-                nome: nome,
-                description: description,
-                valor: valor,
-                urlIMAGE: urlIMAGE
+            $addToSet: {
+                "produtos": {
+                    _id_: id["qnt"],
+                    nome: nome,
+                    description: description,
+                    valor: valor,
+                    urlIMAGE: urlIMAGE
+                }
             }
         },
         { upsert: true }

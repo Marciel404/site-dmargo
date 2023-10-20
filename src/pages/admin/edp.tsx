@@ -160,7 +160,7 @@ addProdutoSelection()
 export default function () {
 
   return (
-    <main className="flex justify-center items-center h-screen">
+    <main className="flex justify-center items-center h-screen bg-pink-200">
       <div className="border-solid flex p-3 rounded-lg" onLoad={valLogin()!}>
         <img src="" alt="Foto Produto" className="border-solid p-3 rounded-lg h-32 w-32" id="photoProduto" />
         <div className="p-3" >

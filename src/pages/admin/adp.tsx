@@ -6,6 +6,7 @@ async function saveProduto(e: any) {
         const nome = e.target[0].value
         const description = e.target[1].value
         const valor = e.target[2].value
+        const categoria = e.target[3].value
         const urlIMAGE: any = document.getElementById("photoProduto")
 
         fetch("/api/saveprod", {
@@ -13,9 +14,9 @@ async function saveProduto(e: any) {
             headers: {
                 nome: nome,
                 description: description,
-                valor: valor
+                valor: valor,
             },
-            body: JSON.stringify({urlimage: urlIMAGE.src})
+            body: JSON.stringify({ urlimage: urlIMAGE.src, categoria: categoria })
         })
             .then(request => request.json())
             .then(response => {
@@ -42,15 +43,15 @@ function photoProduto(e: any) {
 
     const img = document.getElementById("adcIIMG")! as any;
 
-    if (img.files.length > 0){
+    if (img.files.length > 0) {
 
         const carregando = img.files[0];
         const lerarquivo = new FileReader()
-        
-        lerarquivo.onload = function(arquivoCarregando){
-           const img64 = arquivoCarregando.target?.result
-           const i =document.getElementById("photoProduto")! as any
-           i.src = `${img64}`
+
+        lerarquivo.onload = function (arquivoCarregando) {
+            const img64 = arquivoCarregando.target?.result
+            const i = document.getElementById("photoProduto")! as any
+            i.src = `${img64}`
         }
 
         lerarquivo.readAsDataURL(carregando)
@@ -60,7 +61,7 @@ function photoProduto(e: any) {
 
 export default function () {
     return (
-        <main className="flex justify-center items-center h-screen" onLoad={valLogin()!}>
+        <main className="flex justify-center items-center h-screen bg-pink-200" onLoad={valLogin()!}>
             <div className="border-solid flex p-3 rounded-lg">
                 <img src="" alt="Foto Produto" className="border-solid p-3 rounded-lg h-32 w-32" id="photoProduto" />
                 <div className="p-3">
@@ -75,6 +76,17 @@ export default function () {
                         <input required type="text" className="h-5 rounded-lg" id="adcI" />
                         <h2>Valor do produto:</h2>
                         <input required type="number" className="h-5 rounded-lg" id="adcI" />
+                        <h2>Categoria do produto:</h2>
+                        <select className="rounded-lg h-7" required defaultValue={0} id="adcI">
+                            <option value="Selecione a categoria">Selecione a categoria do produto</option>
+                            <option value="vestidos">Vestidos</option>
+                            <option value="short">Short</option>
+                            <option value="bermudas">Bermudas</option>
+                            <option value="blusas">Blusas</option>
+                            <option value="sapatos">Sapatos</option>
+                            <option value="bikinis">Bikinis</option>
+                            <option value="roupaintima">Roupas Intimas</option>
+                        </select>
                         <h2>Imagem do Peroduto:</h2>
                         <input required type="file" onChange={(e) => { photoProduto(e) }} id="adcIIMG" />
                         <div className="flex justify-end">

@@ -72,7 +72,6 @@ export default function contatos() {
                                     <option value="Sergipe (SE)">Sergipe (SE)</option>
                                     <option value="Tocantins (TO)">Tocantins (TO)</option>
                                 </select>
-
                             </div>
                             <textarea className="mt-5 border-b-black border-t-transparent border-l-transparent border-r-transparent font-sans text-2xl resize-y hover:cursor-pointer bg-transparent" required placeholder="Sua Mensagem"></textarea>
 
