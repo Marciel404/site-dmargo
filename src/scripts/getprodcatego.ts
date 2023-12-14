@@ -1,7 +1,7 @@
 
-export function GetProdCatego(categoria: string, className: string) {
+export function GetProdCatego(categoria: string, className: any) {
 
-    fetch("/api/getprodutos")
+    fetch("/api/getprodutos", { method: "POST", headers: { categoria: categoria, clsname: className } })
         .then(x => x.json())
         .then((response: any) => {
 
@@ -9,38 +9,38 @@ export function GetProdCatego(categoria: string, className: string) {
                 return alert(`error: ${response.error}`)
             }
             if (categoria == "undefined") {
+
                 const list = JSON.parse(response.content)
-                list.splice(0, 1)
+
                 for (const p of document.getElementsByClassName(className) as any) {
                     const itemNum = Math.floor(Math.random() * list.length)
-                    if(list[itemNum]){
-                        const itemNum2 = Math.floor(Math.random() * list[itemNum]["produtos"].length)
-                        if (list[itemNum]["produtos"][itemNum2]) {
-                            p.childNodes[0].childNodes[0].src = `${list[itemNum]["produtos"][itemNum2]["urlIMAGE"]}`
-                            p.childNodes[1].childNodes[0].innerHTML = `${list[itemNum]["produtos"][itemNum2]["nome"]}`
-                            p.childNodes[2].childNodes[1].innerHTML += `${list[itemNum]["produtos"][itemNum2]["valor"]} à vista`
-                        }
+                    if (list[itemNum]) {
+                        console.log(list[itemNum])
+                        p.childNodes[0].childNodes[0].src = `${list[itemNum]["urlIMAGE"]}`
+                        p.childNodes[1].childNodes[0].innerHTML = `${list[itemNum]["nome"]}`
+                        p.childNodes[2].childNodes[1].innerHTML += `${list[itemNum]["valor"]} à vista`
                         list.splice(itemNum, 1)
                     }
                 }
             } else {
-                const list = JSON.parse(response.content).find((x: any) => x._id === categoria)
-                
+
+                const list = JSON.parse(response.content)
+
                 if (list){
-                    console.log(list["produtos"])
+                    console.log(list)
                     for (const p of document.getElementsByClassName(className) as any) {
-                        const itemNum = Math.floor(Math.random() * list["produtos"].length)
+                        const itemNum = Math.floor(Math.random() * list.length)
                         if(list){
-                            if (list["produtos"][itemNum]) {
-                                p.childNodes[0].childNodes[0].src = `${list["produtos"][itemNum]["urlIMAGE"]}`
-                                p.childNodes[1].childNodes[0].innerHTML = `${list["produtos"][itemNum]["nome"]}`
-                                p.childNodes[2].childNodes[1].innerHTML += `${list["produtos"][itemNum]["valor"]} à vista`
+                            if (list[itemNum]) {
+                                p.childNodes[0].childNodes[0].src = `${list[itemNum]["urlIMAGE"]}`
+                                p.childNodes[1].childNodes[0].innerHTML = `${list[itemNum]["nome"]}`
+                                p.childNodes[2].childNodes[1].innerHTML += `${list[itemNum]["valor"]} à vista`
                             }
-                            list["produtos"].splice(itemNum, 1)
+                            list.splice(itemNum, 1)
                         }
                     }
                 }
-                
+
             }
         })
 }

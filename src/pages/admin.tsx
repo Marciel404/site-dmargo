@@ -24,7 +24,7 @@ function valPassUser(e: any) {
 
 export default function admin() {
     return (
-        <main className="bg-pink-200 h-screen w-screen" onLoad={valLogin()!}>
+        <main className="bg-pink-200 h-screen w-screen">
             <div>
                 <div className="adminlogin grid place-content-center h-screen">
                     <div className="p-3 border-collapse border-double rounded-lg mr-3 w-96">

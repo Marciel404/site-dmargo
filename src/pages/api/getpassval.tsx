@@ -1,3 +1,4 @@
+import { addProduto } from "@/scripts/db/dbSql";
 import { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
@@ -11,7 +12,7 @@ type ResponseError = {
     error: string
 }
 
-export default function handler(req:NextApiRequest, res: NextApiResponse<ResponseData|ResponseError>) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseData|ResponseError>) {
     if( req.method === "POST" ){
         if (!req.headers.user || req.headers.user !== process.env.userAdmin){
             return res.json({error: "Usuario errado", status:400, return: false})

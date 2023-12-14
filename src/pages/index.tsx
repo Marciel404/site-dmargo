@@ -5,12 +5,16 @@ import Script from "next/script";
 import React from "react";
 import { selectimagebutton, selectimagedivs } from "@/scripts/selectimages";
 import { GetProdCatego } from "@/scripts/getprodcatego";
+import { getProdutos } from "@/scripts/db/dbSql";
 
 export default function index() {
   return (
     <main className="overflow-x-hidden">
+
       <HEADER />
+
       <SIDEBAR />
+
       <Script>{
         React.useEffect(() => {
           setInterval(() => {
@@ -25,6 +29,7 @@ export default function index() {
 
         })!
       }</Script>
+
       <div>
 
         <div className="divslider flex items-center">
@@ -70,7 +75,7 @@ export default function index() {
 
         <div className="divprodutosindex1 flex justify-center">
 
-          <div className="prodindex border-double rounded-lg h-full w-full">
+          <div className="prodindex border-double rounded-lg h-full w-full m-3">
 
             <div className="flex justify-center">
               <img className="imageprodindex w-20" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.freepik.com%2Ffotos-vetores-gratis%2Fcarregando&psig=AOvVaw0J8YwwP57Tnl8dn5GlMdba&ust=1697849447514000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKC8hZ20g4IDFQAAAAAdAAAAABAE" alt="produto" />

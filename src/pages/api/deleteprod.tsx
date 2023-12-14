@@ -1,4 +1,4 @@
-import { deleteProduto } from "@/scripts/db/dbconections";
+import { deleteProduto } from "@/scripts/db/dbSql";
 import { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
@@ -14,7 +14,7 @@ type ResponseError = {
 export default async function handler(req:NextApiRequest, res: NextApiResponse<ResponseData|ResponseError>) {
     if( req.method === "DELETE" ){
         try {
-            const id = req.headers.id
+            const id = req.headers.id as any
             await deleteProduto(id)
             res.status(200).send({content: "Produto Deletado", status: 200})
         } catch (e){

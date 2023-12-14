@@ -2,7 +2,9 @@ import moment from "moment-timezone";
 import React from "react"
 
 export default function () {
+
     React.useEffect(() => {
+
         const obj = JSON.parse(localStorage.getItem(`valAdminPortal`)!);
 
         try {
@@ -27,7 +29,7 @@ export default function () {
                 
             }
         } catch {
-            location.href = "/"
+            location.href = "/admin"
             alert("Sem acesso")
         }
 
